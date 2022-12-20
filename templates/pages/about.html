@@ -1,0 +1,129 @@
+{% extends 'pages/header.html'%}
+{% block title %}  | About {% endblock %}
+{% block content %}
+{% load static %}
+<section class="banner-area">
+    <div class="banner-overlay">
+        <div class="banner-text text-center">
+            <div class="container">
+                <!-- Section Title Starts -->
+                <div class="row text-center">
+                    <div class="col-xs-12">
+                        <!-- Title Starts -->
+                        <h2 class="title-head">About <span>Us</span></h2>
+                        <!-- Title Ends -->
+                        <hr>
+                        <!-- Breadcrumb Starts -->
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'homes' %}"> home</a></li>
+                            <li>About</li>
+                        </ul>
+                        <!-- Breadcrumb Ends -->
+                    </div>
+                </div>
+                <!-- Section Title Ends -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Area Starts -->
+ <!-- About Section Starts -->
+
+ <section class="about-page">
+    <div class="container">
+        <!-- Section Content Starts -->
+     {% for ab in about %}   
+        <div class="row about-content">
+            <!-- Image Starts -->
+            <div class="col-sm-12 col-md-5 col-lg-6 text-center">
+                <img id="about-us" class="img-responsive img-about-us" src="{{ab.about_image.url}}" alt="about us">
+            </div>
+            <!-- Image Ends -->
+            <!-- Content Starts -->
+            <div class="col-sm-12 col-md-7 col-lg-6">
+                <div class="feature-about">
+                    <h3 class="title-about">{{ab.about_title}}</h3>
+                    <p>A place for everyone who wants to predict the stock and bitcoin Prices. The system provided users latest news of stocks and crypto-Currency. The major benefit of the system is that it is free of cost.</p>
+                </div>
+                <div class="feature-about">
+                    <h3 class="title-about risk-title"><i class="fa fa-warning"></i>Attention</h3>
+                    <p>Our mission is to provide platform that will  help you to enter and better understand of the stock and bitcoin and avoid any issues you may encounter.</p>
+                </div>
+                <a class="btn btn-primary btn-services" href="#">SMART PREDICTOR</a>
+            </div>
+            <!-- Content Ends -->
+            
+        </div>
+        <!-- Section Content Ends -->
+    </div><!--/ Content row end -->
+</section>
+<!-- About Section Ends -->
+		<!-- Facts Section Starts -->
+        <section class="facts">
+			<!-- Container Starts -->
+			<div class="container">
+				<!-- Fact Badges Starts -->
+				<div class="row text-center facts-content">
+					<div class="text-center heading-facts">
+						<h2>Bitcoin<span> numbers</span></h2>
+						<p>leading crypto-currency exchange since day one of Bitcoin distribution</p>
+					</div>
+					<!-- Fact Badge Item Starts -->
+					<div class="col-xs-12 col-md-3 col-sm-6 fact">
+						<h3>${{ab.market_captilization}}B</h3>
+						<h4>market cap</h4>
+					</div>
+					<!-- Fact Badge Item Ends -->
+					<!-- Fact Badge Item Starts -->
+					<div class="col-xs-12 col-md-3 col-sm-6 fact fact-clear">
+						<h3>{{ab.daily_transaction}}k</h3>
+						<h4>daily transactions</h4>
+					</div>
+					<!-- Fact Badge Item Ends -->
+					<!-- Fact Badge Item Starts -->
+					<div class="col-xs-12 col-md-3 col-sm-6 fact">
+						<h3>{{ab.active_accounts}}</h3>
+						<h4>active accounts</h4>
+					</div>
+					<!-- Fact Badge Item Ends -->
+					<!-- Fact Badge Item Starts -->
+					<div class="col-xs-12 col-md-3 col-sm-6">
+						<h3>{{ab.years}}</h3>
+						<h4>years on the market</h4>
+					</div>
+					<!-- Fact Badge Item Ends -->
+					<div class="col-xs-12 buttons">
+						<a class="btn btn-primary btn-pricing" href="{% url 'bitcoin' %}">Bitcoin Updates</a>				
+					</div>
+				</div>
+				<!-- Fact Badges Ends -->
+			</div>
+			<!-- Container Ends -->
+        </section>
+        <!-- facts Section Ends -->
+        {% endfor %}
+                <!-- Call To Action Section Starts -->
+                <section class="call-action-all">
+                    <div class="call-action-all-overlay">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <!-- Call To Action Text Starts -->
+                                    <div class="action-text">
+                                        <h2>Get Started Today With Smart Predictor</h2>
+                                        <p class="lead">Let's learn about the system!</p>
+                                    </div>
+                                    <!-- Call To Action Text Ends -->
+                                    <!-- Call To Action Button Starts -->
+                                    <p class="action-btn"><a class="btn btn-primary" href="{% url 'homes' %}">Go to Home Page</a></p>
+                                    <!-- Call To Action Button Ends -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Call To Action Section Ends -->
+                {% endblock %}
+
+
+
